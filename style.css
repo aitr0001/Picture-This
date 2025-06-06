@@ -8,7 +8,7 @@ body {
   background: #f8f8f8;
 }
 
-/* Header grid: stacks on mobile, two columns on desktop */
+
 .header {
   display: grid;
   grid-template-columns: 1fr;
@@ -18,7 +18,7 @@ body {
   padding: 2rem 0;
 }
 
-/* Title section styling */
+
 .title {
   padding: 0 25px;
   text-align: center;
@@ -35,7 +35,7 @@ h4 {
   margin: 1rem 0 0 0;
 }
 
-/* Responsive image styles */
+
 picture {
   display: block;
   width: 100%;
@@ -51,7 +51,7 @@ img {
   box-shadow: 0 2px 12px rgba(0,0,0,0.07);
 }
 
-/* Desktop: two columns, image in second column, title in first */
+
 @media (min-width: 960px) {
   .header {
     grid-template-columns: 1fr 1fr;
@@ -70,7 +70,6 @@ img {
     grid-column: 2;
     margin-bottom: 2rem;
   }
-  /* Make images square and fill grid area */
   picture, img {
     aspect-ratio: 1 / 1;
     object-fit: cover;
