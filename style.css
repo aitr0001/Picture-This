@@ -1,21 +1,26 @@
+css
 @import url('https://fonts.googleapis.com/css?family=Roboto:300,700&display=swap');
 
 html,
 body {
   margin: 0;
-  border: 0;
   font-family: 'Roboto', sans-serif;
+  background: #f8f8f8;
 }
 
+/* Header grid: stacks on mobile, two columns on desktop */
 .header {
   display: grid;
   grid-template-columns: 1fr;
-  align-items: center;
+  align-items: start;
+  gap: 2rem;
   background-color: cadetblue;
+  padding: 2rem 0;
 }
 
+/* Title section styling */
 .title {
-  padding: 50px 25px;
+  padding: 0 25px;
   text-align: center;
 }
 
@@ -27,14 +32,49 @@ h1 {
 h4 {
   font-size: 1.5rem;
   font-weight: 300;
+  margin: 1rem 0 0 0;
+}
+
+/* Responsive image styles */
+picture {
+  display: block;
+  width: 100%;
+  margin: 0 auto 1.5rem auto;
 }
 
 img {
   display: block;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.07);
 }
 
+/* Desktop: two columns, image in second column, title in first */
 @media (min-width: 960px) {
   .header {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 2rem;
+    padding: 2rem 0;
+  }
+  .title {
+    grid-column: 1;
+    text-align: right;
+    align-self: center;
+    padding-right: 2rem;
+  }
+  /* Image in the right column */
+  .header picture {
+    grid-column: 2;
+    margin-bottom: 2rem;
+  }
+  /* Make images square and fill grid area */
+  picture, img {
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    height: 100%;
+    max-width: 100%;
   }
 }
